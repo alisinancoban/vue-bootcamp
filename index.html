@@ -4,17 +4,17 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>VueJS</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/lib/vue.min.js"></script>
-    
 </head>
 <body>
 	<div id="app">
-		<button v-on:click="counter++">Increase</button>
-		<button v-on:click="counter--">Decrease</button>
-		<button v-on:click="sndCounter++">Increase second</button>
-		<p>Counter: {{ counter }} | {{ sndCounter }}</p>
-		<p>Result: {{ result() }} | {{ output }}</p>
+		<div
+		 class="demo"
+		 @click="attachRed = !attachRed"
+		 :class="divClasses">
+		</div>
+
 	</div>
     <script src="assets/js/index.js"></script>
 </body>
