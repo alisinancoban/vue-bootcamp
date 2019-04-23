@@ -9,11 +9,11 @@
 </head>
 <body>
 	<div id="app">
-		<div
-		 class="demo"
-		 @click="attachRed = !attachRed"
-		 :class="divClasses">
-		</div>
+		<div class="demo" :style="{backgroundColor: color}"></div>
+		<div class="demo" :style="[myStyle , {height: width+'px'}]"></div>
+		<div class="demo" :style="myStyle"></div><br>
+		<input type="text" v-model="color">
+		<input type="text" v-model="width">
 
 	</div>
     <script src="assets/js/index.js"></script>
