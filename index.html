@@ -10,20 +10,11 @@
 </head>
 <body>
 	<div id="app">
-		<h1 v-once>{{ title }}</h1>
-		<input type="text">
-		<p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
-		<p v-html="finishedLink"></p>
-		<hr>
-		<button v-on:click="increase(2, $event)">Click me</button>
-		<p>{{ counter }}</p>
-		<p v-on:mousemove="updateCoordinates">
-			Coordinates: {{ x }} / {{ y }}
-			- <span v-on:mousemove.stop>DEAD SPOT</span>
-		</p>
-		<input type="text" v-on:keyup.enter="value = $event.target.value">
-		<p>{{ value }}</p>
-
+		<button v-on:click="counter++">Increase</button>
+		<button v-on:click="counter--">Decrease</button>
+		<button v-on:click="sndCounter++">Increase second</button>
+		<p>Counter: {{ counter }} | {{ sndCounter }}</p>
+		<p>Result: {{ result() }} | {{ output }}</p>
 	</div>
     <script src="assets/js/index.js"></script>
 </body>
