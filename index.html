@@ -9,16 +9,26 @@
 </head>
 <body>
 	<div id="app">
-		<p v-if="show">You can see me! <span>Nested element</span></p>
-		<p v-else>Now you can see me</p>
-
-		<template v-if="show">
-			<h1>Heading</h1>
-			<p>Inside a template</p>
+		<ul>
+			<li v-for="(element, index) in ingredients" :key="element">{{ element }} ({{ index }})</li>
+		</ul>
+		<input type="text" v-model:value="input">
+		<button @click="pushToList">Add New</button>
+		<hr>
+		<template v-for="(element, index) in ingredients">
+			<h1>{{ element }}</h1>
+			<p>{{ index }}</p>
 		</template>
-
-		<p>Do you also see me?</p>
-		<button @click="show = !show">Switch</button>
+		<hr>
+		<ul>
+			<li v-for="person in persons">
+				<div v-for="(value, key, index) in person">({{ index }}) {{ key }} :{{ value }} </div>
+			</li>
+		</ul>
+		<hr>
+		<ul>
+			<span v-for="item in 10">{{ item }}</span>
+		</ul>
 	</div>
     <script src="assets/js/index.js"></script>
 </body>
